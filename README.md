@@ -49,7 +49,7 @@ A futuristic dark-neon portfolio featuring **flip animations**, **particle effec
 
 ```bash
 # Clone the repository
-git clone https://github.com/ImVadimush/dev
+git clone https://github.com/ImVadimush/bio
 
 # Go to project directory
 cd dev
