@@ -295,8 +295,8 @@ canvas {
 }
 
 .music-player.volume-expanded .progress-container {
-  width: calc(100% - 52px);
-  margin-right: 52px;
+  width: calc(100% - 48px);
+  margin-right: 48px;
 }
 
 .progress-bar {
@@ -323,7 +323,7 @@ canvas {
 }
 
 .music-player.volume-expanded .time-display #duration {
-  transform: translateX(-52px);
+  transform: translateX(-48px);
 }
 
 .volume-area {
@@ -342,20 +342,22 @@ canvas {
   display: flex;
   align-items: center;
   cursor: pointer;
-  background: rgba(20, 20, 20, 0.8);
+  background: rgba(20, 20, 20, 0.5);
+  border: none;
   border-radius: 6px;
   padding: 6px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
 .volume-area.expanded .volume-icon-container {
-  transform: translateX(-54px);
+  transform: translateX(-52px);
 }
 
 .volume-icon-container:hover {
   background: rgba(0, 255, 136, 0.1);
+  border-color: #00ff88;
 }
 
 .volume-icon {
@@ -372,16 +374,18 @@ canvas {
   pointer-events: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
-  background: rgba(20, 20, 20, 0.8);
+  background: rgba(20, 20, 20, 0.5);
+  border: none;
   border-radius: 6px;
   padding: 6px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
 }
 
 .volume-area.expanded .volume-control {
   opacity: 1;
   width: 60px;
   pointer-events: all;
+  transform: translateX(8px);
 }
 
 .volume-slider-container {
@@ -508,7 +512,7 @@ canvas {
   background: rgba(0, 255, 136, 0.1);
   border: 1px solid rgba(0, 255, 136, 0.3);
   border-radius: 8px;
-  padding: 8px 12px;
+  padding: 10px 14px;
   text-decoration: none;
   color: #00ff88;
   font-size: 12px;
@@ -810,7 +814,7 @@ canvas {
   }
 }
 
-/* SMALL SCREENS - Content moved slightly lower */
+/* SMALL SCREENS - Better spacing for mobile */
 @media (max-width: 768px) {
   .flip-container {
     height: 440px;
@@ -822,15 +826,10 @@ canvas {
     padding: 15px;
   }
 
-  /* Smaller Order button */
+  /* Larger Order button */
   .order-btn {
-    padding: 6px 10px;
+    padding: 8px 12px;
     font-size: 11px;
-  }
-
-  .order-btn svg {
-    width: 12px;
-    height: 12px;
   }
 
   .profile-header {
@@ -882,25 +881,24 @@ canvas {
     padding: 8px;
   }
 
-  /* Back card - Content moved 5px lower */
+  /* Back card - Better spacing for mobile */
   .back-content {
-    gap: 16px;
+    gap: 20px;
     justify-content: center;
-    padding: 15px 0 5px 0;
-    transform: translateY(5px);
+    padding: 20px 0 15px 0;
   }
 
   .section-title {
     font-size: 17px;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .stats {
-    gap: 6px;
+    gap: 8px;
   }
 
   .stat-item {
-    padding: 8px 5px;
+    padding: 10px 6px;
   }
 
   .stat-value {
@@ -912,17 +910,17 @@ canvas {
   }
 
   .stack-list {
-    gap: 6px;
+    gap: 8px;
   }
 
   .stack-item {
-    padding: 7px;
+    padding: 8px;
     font-size: 11px;
   }
 
   .project-small {
-    padding: 9px;
-    gap: 6px;
+    padding: 10px;
+    gap: 7px;
   }
 
   .project-title-small {
@@ -945,15 +943,10 @@ canvas {
     padding: 12px;
   }
 
-  /* Even smaller Order button for mobile */
+  /* Even larger Order button for mobile */
   .order-btn {
-    padding: 5px 8px;
+    padding: 7px 10px;
     font-size: 10px;
-  }
-
-  .order-btn svg {
-    width: 11px;
-    height: 11px;
   }
 
   .profile-header {
@@ -1005,25 +998,24 @@ canvas {
     padding: 7px;
   }
 
-  /* Back card - Content moved 6px lower */
+  /* Back card - Even better spacing for mobile */
   .back-content {
-    gap: 14px;
+    gap: 18px;
     justify-content: center;
-    padding: 20px 0 8px 0;
-    transform: translateY(6px);
+    padding: 25px 0 20px 0;
   }
 
   .section-title {
     font-size: 16px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .stats {
-    gap: 5px;
+    gap: 6px;
   }
 
   .stat-item {
-    padding: 6px 4px;
+    padding: 8px 5px;
   }
 
   .stat-value {
@@ -1035,17 +1027,17 @@ canvas {
   }
 
   .stack-list {
-    gap: 5px;
+    gap: 6px;
   }
 
   .stack-item {
-    padding: 6px;
+    padding: 7px;
     font-size: 10px;
   }
 
   .project-small {
-    padding: 8px;
-    gap: 5px;
+    padding: 9px;
+    gap: 6px;
   }
 
   .project-title-small {
@@ -1068,35 +1060,29 @@ canvas {
     padding: 10px;
   }
 
-  /* Smallest Order button */
+  /* Largest Order button for smallest screens */
   .order-btn {
-    padding: 4px 6px;
+    padding: 6px 8px;
     font-size: 9px;
   }
 
-  .order-btn svg {
-    width: 10px;
-    height: 10px;
-  }
-
-  /* Back card - Content moved 4px lower */
+  /* Back card - Maximum spacing for smallest screens */
   .back-content {
-    gap: 12px;
-    padding: 25px 0 10px 0;
-    transform: translateY(4px);
+    gap: 16px;
+    padding: 30px 0 25px 0;
   }
 
   .section-title {
     font-size: 15px;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
 
   .stats {
-    gap: 4px;
+    gap: 5px;
   }
 
   .stat-item {
-    padding: 5px 3px;
+    padding: 7px 4px;
   }
 
   .stat-value {
@@ -1105,7 +1091,7 @@ canvas {
 
   .stack-item {
     font-size: 9px;
-    padding: 5px;
+    padding: 6px;
   }
 
   .project-title-small {
