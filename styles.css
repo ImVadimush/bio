@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  touch-action: manipulation;
+  overscroll-behavior: none;
+}
+
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
@@ -15,6 +21,8 @@ body {
   align-items: center;
   padding: 20px;
   position: relative;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }
 
 body::before {
@@ -691,6 +699,30 @@ canvas {
   box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
 }
 
+@supports (-webkit-touch-callout: none) {
+  /* iOS Safari */
+  body {
+    min-height: -webkit-fill-available;
+  }
+  
+  .flip-container {
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .card {
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .card-front,
+  .card-back {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    will-change: transform;
+  }
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -1012,7 +1044,19 @@ canvas {
   .back-content {
     gap: 18px;
     justify-content: center;
-    padding: 25px 0 20px 0;
+    padding: 35px 0 20px 0;
+  }
+
+  .section {
+    margin-bottom: 0;
+  }
+
+  .section:nth-child(2) {
+    margin-top: 4px;
+  }
+
+  .section:nth-child(3) {
+    margin-top: 6px;
   }
 
   .section-title {
@@ -1076,7 +1120,7 @@ canvas {
     width: 48px;
   }
 
-.volume-area {
+  .volume-area {
     right: 8px;
   }
 }
