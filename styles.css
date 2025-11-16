@@ -352,7 +352,7 @@ canvas {
 }
 
 .volume-area.expanded .volume-icon-container {
-  transform: translateX(-52px);
+  transform: translateX(-50px);
 }
 
 .volume-icon-container:hover {
