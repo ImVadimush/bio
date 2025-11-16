@@ -430,3 +430,36 @@ window.addEventListener('load', () => {
 window.addEventListener('beforeunload', () => {
     cancelAnimationFrame(animationId);
 });
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener('orientationchange', function() {
+        const card = document.getElementById('card');
+        const currentTransform = card.style.transform;
+        
+        card.style.transition = 'none';
+        setTimeout(() => {
+            card.style.transition = 'transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        }, 100);
+    });
+}
+
+document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+}, { passive: false });
+
+document.addEventListener('gesturechange', function(e) {
+    e.preventDefault();
+}, { passive: false });
+
+document.addEventListener('gestureend', function(e) {
+    e.preventDefault();
+}, { passive: false });
+
+let lastTouchEnd = 0;
+document.addEventListener('touchend', function(e) {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
