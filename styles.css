@@ -356,8 +356,7 @@ canvas {
 }
 
 .volume-icon-container:hover {
-  background: rgba(0, 255, 136, 0.1);
-  border-color: #00ff88;
+  background: rgba(20, 20, 20, 0.5);
 }
 
 .volume-icon {
@@ -701,7 +700,6 @@ canvas {
   }
 }
 
-/* LARGE SCREENS - Slightly smaller elements */
 @media (min-width: 1200px) {
   .flip-container {
     height: 500px;
@@ -814,7 +812,6 @@ canvas {
   }
 }
 
-/* SMALL SCREENS - Better spacing for mobile */
 @media (max-width: 768px) {
   .flip-container {
     height: 440px;
@@ -826,7 +823,6 @@ canvas {
     padding: 15px;
   }
 
-  /* Larger Order button */
   .order-btn {
     padding: 8px 12px;
     font-size: 11px;
@@ -881,7 +877,6 @@ canvas {
     padding: 8px;
   }
 
-  /* Back card - Better spacing for mobile */
   .back-content {
     gap: 20px;
     justify-content: center;
@@ -930,6 +925,23 @@ canvas {
   .project-description-small {
     font-size: 10px;
   }
+
+  .volume-icon-container:hover {
+    background: rgba(20, 20, 20, 0.5);
+  }
+
+  .volume-area.expanded .volume-icon-container {
+    transform: translateX(-44px);
+  }
+
+  .music-player.volume-expanded .progress-container {
+    width: calc(100% - 44px);
+    margin-right: 44px;
+  }
+
+  .music-player.volume-expanded .time-display #duration {
+    transform: translateX(-44px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -943,7 +955,6 @@ canvas {
     padding: 12px;
   }
 
-  /* Even larger Order button for mobile */
   .order-btn {
     padding: 7px 10px;
     font-size: 10px;
@@ -998,7 +1009,6 @@ canvas {
     padding: 7px;
   }
 
-  /* Back card - Even better spacing for mobile */
   .back-content {
     gap: 18px;
     justify-content: center;
@@ -1047,6 +1057,23 @@ canvas {
   .project-description-small {
     font-size: 9px;
   }
+
+  .volume-icon-container:hover {
+    background: rgba(20, 20, 20, 0.5);
+  }
+
+  .volume-area.expanded .volume-icon-container {
+    transform: translateX(-40px);
+  }
+
+  .music-player.volume-expanded .progress-container {
+    width: calc(100% - 40px);
+    margin-right: 40px;
+  }
+
+  .music-player.volume-expanded .time-display #duration {
+    transform: translateX(-40px);
+  }
 }
 
 @media (max-width: 360px) {
@@ -1060,13 +1087,11 @@ canvas {
     padding: 10px;
   }
 
-  /* Largest Order button for smallest screens */
   .order-btn {
     padding: 6px 8px;
     font-size: 9px;
   }
 
-  /* Back card - Maximum spacing for smallest screens */
   .back-content {
     gap: 16px;
     padding: 30px 0 25px 0;
@@ -1100,5 +1125,22 @@ canvas {
 
   .project-description-small {
     font-size: 8px;
+  }
+
+  .volume-icon-container:hover {
+    background: rgba(20, 20, 20, 0.5);
+  }
+
+  .volume-area.expanded .volume-icon-container {
+    transform: translateX(-36px);
+  }
+
+  .music-player.volume-expanded .progress-container {
+    width: calc(100% - 36px);
+    margin-right: 36px;
+  }
+
+  .music-player.volume-expanded .time-display #duration {
+    transform: translateX(-36px);
   }
 }
