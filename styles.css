@@ -50,14 +50,13 @@ canvas {
   z-index: 1;
 }
 
-/* CARD STRUCTURE */
 .flip-container {
   position: relative;
   z-index: 2;
   width: 100%;
   max-width: 450px;
   perspective: 1000px;
-  height: 513px;
+  height: 490px;
   margin: 0 auto;
 }
 
@@ -106,21 +105,21 @@ canvas {
   height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   text-align: center;
-  margin-top: 10px;
-  justify-content: space-evenly;
 }
 
 .section {
   margin-bottom: 0;
+  width: 100%;
 }
 
 .section > *:not(.section-title) {
   margin-top: 10px;
 }
 
-/* FLIP BUTTON */
 .flip-btn {
   position: absolute;
   top: 20px;
@@ -157,7 +156,6 @@ canvas {
   transform: rotate(180deg);
 }
 
-/* PROFILE HEADER */
 .profile-header {
   display: flex;
   align-items: center;
@@ -214,7 +212,6 @@ canvas {
   }
 }
 
-/* MUSIC PLAYER */
 .music-player {
   background: rgba(20, 20, 20, 0.5);
   border: 1px solid rgba(0, 255, 136, 0.3);
@@ -223,6 +220,7 @@ canvas {
   margin: 2px 0;
   position: relative;
   backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .music-controls {
@@ -232,6 +230,7 @@ canvas {
   width: 100%;
   position: relative;
   padding-right: 35px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .play-btn {
@@ -259,13 +258,12 @@ canvas {
   fill: #0a0a0a;
 }
 
-/* Updated music-info to fade progress bar and time when volume expands */
 .music-info {
   flex: 1;
   min-width: 0;
   overflow: hidden;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .song-name {
@@ -277,7 +275,8 @@ canvas {
   text-overflow: ellipsis;
   margin-bottom: 5px;
   position: relative;
-  transition: padding-right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-right: 0;
 }
 
 .music-player.volume-expanded .song-name {
@@ -292,11 +291,12 @@ canvas {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .music-player.volume-expanded .progress-container {
   width: calc(100% - 52px);
+  margin-right: 52px;
 }
 
 .progress-bar {
@@ -315,17 +315,17 @@ canvas {
   color: #888;
   margin-top: 3px;
   position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .time-display #duration {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .music-player.volume-expanded .time-display #duration {
   transform: translateX(-52px);
 }
 
-/* VOLUME CONTROLS - UPDATED */
 .volume-area {
   position: absolute;
   right: 12px;
@@ -334,7 +334,7 @@ canvas {
   display: flex;
   align-items: center;
   gap: 2px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 2;
 }
 
@@ -346,7 +346,7 @@ canvas {
   border-radius: 6px;
   padding: 6px;
   backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
 }
 
@@ -370,7 +370,7 @@ canvas {
   opacity: 0;
   width: 0;
   pointer-events: none;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   background: rgba(20, 20, 20, 0.8);
   border-radius: 6px;
@@ -415,7 +415,6 @@ canvas {
   box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
 }
 
-/* LINKS */
 .links {
   display: flex;
   gap: 8px;
@@ -456,7 +455,6 @@ canvas {
   font-weight: 600;
 }
 
-/* QUOTE */
 .quote {
   text-align: center;
   margin-top: 8px;
@@ -486,7 +484,6 @@ canvas {
   }
 }
 
-/* OFFER SECTION */
 .offer {
   background: rgba(20, 20, 20, 0.5);
   border: 1px solid rgba(0, 255, 136, 0.3);
@@ -531,11 +528,10 @@ canvas {
   fill: #00ff88;
 }
 
-/* BACK CARD SECTIONS */
 .section-title {
   font-size: 18px;
   color: #00ff88;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   margin-top: 0;
   text-align: center;
   font-family: "Irish Grover", cursive;
@@ -545,7 +541,7 @@ canvas {
 .stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 5px;
+  gap: 10px;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -553,7 +549,7 @@ canvas {
 .stack-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
+  gap: 10px;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -562,7 +558,7 @@ canvas {
   background: rgba(20, 20, 20, 0.5);
   border: 1px solid rgba(0, 255, 136, 0.2);
   border-radius: 8px;
-  padding: 6px;
+  padding: 10px;
   text-align: center;
   font-size: 12px;
   transition: all 0.3s;
@@ -580,7 +576,7 @@ canvas {
   background: rgba(20, 20, 20, 0.5);
   border: 1px solid rgba(0, 255, 136, 0.2);
   border-radius: 8px;
-  padding: 6px 5px;
+  padding: 12px 8px;
   transition: all 0.3s;
   backdrop-filter: blur(10px);
 }
@@ -595,7 +591,7 @@ canvas {
   font-size: 20px;
   font-weight: bold;
   color: #00ff88;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .stat-label {
@@ -607,10 +603,10 @@ canvas {
   background: rgba(20, 20, 20, 0.5);
   border: 1px solid rgba(0, 255, 136, 0.2);
   border-radius: 8px;
-  padding: 8px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
   height: auto;
   margin-top: 0;
   backdrop-filter: blur(10px);
@@ -627,7 +623,7 @@ canvas {
 .project-description-small {
   font-size: 11px;
   color: #ccc;
-  line-height: 1.3;
+  line-height: 1.4;
   margin: 0;
   text-align: center;
   flex: 1;
@@ -662,7 +658,6 @@ canvas {
   fill: #00ff88;
 }
 
-/* LOADING SCREEN */
 .loading {
   position: fixed;
   top: 0;
@@ -702,47 +697,166 @@ canvas {
   }
 }
 
-/* RESPONSIVE DESIGN */
+/* LARGE SCREENS - Slightly smaller elements */
+@media (min-width: 1200px) {
+  .flip-container {
+    height: 500px;
+    max-width: 450px;
+  }
+
+  .card-back {
+    padding: 25px;
+  }
+
+  .back-content {
+    gap: 22px;
+    justify-content: center;
+  }
+
+  .section-title {
+    font-size: 19px;
+    margin-bottom: 12px;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat-item {
+    padding: 10px 7px;
+  }
+
+  .stat-value {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stack-list {
+    gap: 10px;
+  }
+
+  .stack-item {
+    padding: 9px;
+    font-size: 12px;
+  }
+
+  .project-small {
+    padding: 11px;
+    gap: 7px;
+  }
+
+  .project-title-small {
+    font-size: 15px;
+  }
+
+  .project-description-small {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .flip-container {
+    height: 510px;
+  }
+
+  .card-back {
+    padding: 28px;
+  }
+
+  .back-content {
+    gap: 24px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .stats {
+    gap: 11px;
+  }
+
+  .stat-item {
+    padding: 11px 8px;
+  }
+
+  .stat-value {
+    font-size: 21px;
+  }
+
+  .stack-list {
+    gap: 11px;
+  }
+
+  .stack-item {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .project-small {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .project-title-small {
+    font-size: 16px;
+  }
+
+  .project-description-small {
+    font-size: 12px;
+  }
+}
+
+/* SMALL SCREENS - Content moved slightly lower */
 @media (max-width: 768px) {
   .flip-container {
-    height: 450px;
+    height: 440px;
     max-width: 380px;
   }
 
   .card-front,
   .card-back {
-    padding: 14px;
+    padding: 15px;
+  }
+
+  /* Smaller Order button */
+  .order-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .order-btn svg {
+    width: 12px;
+    height: 12px;
   }
 
   .profile-header {
-    margin-top: 15px;
-    margin-bottom: 2px;
+    margin-top: 5px;
+    margin-bottom: -5px;
   }
 
   .name {
     font-size: 26px;
-    margin-bottom: -4px;
+    margin-bottom: -8px;
   }
 
   .title {
     font-size: 14px;
-    margin-bottom: -10px;
+    margin-bottom: -12px;
   }
 
   .status {
     font-size: 12px;
-    margin-top: 2px;
-    margin-bottom: 4px;
+    margin-top: -2px;
+    margin-bottom: 2px;
   }
 
   .music-player {
-    padding: 8px;
-    margin: 2px 0;
-  }
-
-  .play-btn {
-    width: 32px;
-    height: 32px;
+    padding: 10px;
+    margin: 1px 0;
   }
 
   .song-name {
@@ -751,7 +865,7 @@ canvas {
 
   .links {
     gap: 6px;
-    margin: 2px 0;
+    margin: 1px 0;
   }
 
   .link-btn {
@@ -760,73 +874,69 @@ canvas {
 
   .offer {
     padding: 10px;
-    margin: 2px 0;
+    margin: 1px 0;
   }
 
   .quote {
-    margin-top: 6px;
+    margin-top: 4px;
     padding: 8px;
   }
 
-  /* Responsive fade for progress bar and time on tablet */
-  .music-player.volume-expanded .song-name {
-    mask-image: linear-gradient(to right, black calc(100% - 75px), transparent calc(100% - 15px));
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 75px), transparent calc(100% - 15px));
-  }
-
-  .music-player.volume-expanded .progress-container {
-    mask-image: linear-gradient(to right, black calc(100% - 48px), transparent calc(100% - 43px));
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 48px), transparent calc(100% - 43px));
-  }
-
-  .volume-area.expanded .volume-icon-container {
-    transform: translateX(-48px);
-  }
-
-  .music-player.volume-expanded .time-display #duration {
-    transform: translateX(-48px);
-  }
-
-  .volume-icon {
-    width: 14px;
-    height: 14px;
-  }
-
-  .volume-slider-container {
-    height: 3px;
-  }
-
-  .volume-area.expanded .volume-control {
-    width: 50px;
-  }
-
+  /* Back card - Content moved 5px lower */
   .back-content {
-    gap: 6px;
-    margin-top: 8px;
+    gap: 16px;
+    justify-content: center;
+    padding: 15px 0 5px 0;
+    transform: translateY(5px);
   }
 
   .section-title {
-    font-size: 16px;
-    margin-bottom: 2px;
+    font-size: 17px;
+    margin-bottom: 8px;
   }
 
   .stats {
-    gap: 5px;
+    gap: 6px;
+  }
+
+  .stat-item {
+    padding: 8px 5px;
+  }
+
+  .stat-value {
+    font-size: 18px;
+  }
+
+  .stat-label {
+    font-size: 9px;
   }
 
   .stack-list {
-    gap: 5px;
+    gap: 6px;
+  }
+
+  .stack-item {
+    padding: 7px;
+    font-size: 11px;
   }
 
   .project-small {
-    padding: 7px;
-    gap: 5px;
+    padding: 9px;
+    gap: 6px;
+  }
+
+  .project-title-small {
+    font-size: 14px;
+  }
+
+  .project-description-small {
+    font-size: 10px;
   }
 }
 
 @media (max-width: 480px) {
   .flip-container {
-    height: 470px;
+    height: 420px;
     max-width: 340px;
   }
 
@@ -835,138 +945,81 @@ canvas {
     padding: 12px;
   }
 
+  /* Even smaller Order button for mobile */
+  .order-btn {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .order-btn svg {
+    width: 11px;
+    height: 11px;
+  }
+
   .profile-header {
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: -8px;
   }
 
   .name {
     font-size: 24px;
-    margin-bottom: -2px;
+    margin-bottom: -10px;
   }
 
   .title {
     font-size: 13px;
-    margin-bottom: -8px;
+    margin-bottom: -14px;
   }
 
   .status {
     font-size: 11px;
-    margin-top: -2px;
-    margin-bottom: 2px;
+    margin-top: -4px;
+    margin-bottom: 0;
   }
 
   .music-player {
-    padding: 6px;
-    margin: 1px 0;
-  }
-
-  .play-btn {
-    width: 30px;
-    height: 30px;
-  }
-
-  .play-btn svg {
-    width: 12px;
-    height: 12px;
+    padding: 8px;
+    margin: 0;
   }
 
   .song-name {
     font-size: 10px;
-    margin-bottom: 4px;
-  }
-
-  .time-display {
-    font-size: 9px;
   }
 
   .links {
     gap: 5px;
-    margin: 1px 0;
+    margin: 0;
   }
 
   .link-btn {
     padding: 7px;
-    gap: 4px;
-  }
-
-  .link-icon {
-    width: 16px;
-    height: 16px;
-  }
-
-  .link-text {
-    font-size: 9px;
   }
 
   .offer {
     padding: 8px;
-    margin: 1px 0;
-  }
-
-  .offer-text {
-    font-size: 12px;
-    margin-bottom: 8px;
-  }
-
-  .order-btn {
-    padding: 7px 10px;
-    font-size: 11px;
+    margin: 0;
   }
 
   .quote {
-    margin-top: 4px;
+    margin-top: 2px;
     padding: 7px;
   }
 
-  .quote-text {
-    font-size: 11px;
-  }
-
-  /* Responsive fade for progress bar and time on mobile */
-  .music-player.volume-expanded .song-name {
-    mask-image: linear-gradient(to right, black calc(100% - 65px), transparent calc(100% - 10px));
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 65px), transparent calc(100% - 10px));
-  }
-
-  .music-player.volume-expanded .progress-container {
-    mask-image: linear-gradient(to right, black calc(100% - 44px), transparent calc(100% - 39px));
-    -webkit-mask-image: linear-gradient(to right, black calc(100% - 44px), transparent calc(100% - 39px));
-  }
-
-  .volume-area.expanded .volume-icon-container {
-    transform: translateX(-44px);
-  }
-
-  .music-player.volume-expanded .time-display #duration {
-    transform: translateX(-44px);
-  }
-
-  .volume-icon {
-    width: 12px;
-    height: 12px;
-  }
-
-  .volume-slider-container {
-    height: 3px;
-  }
-
-  .volume-area.expanded .volume-control {
-    width: 50px;
-  }
-
+  /* Back card - Content moved 6px lower */
   .back-content {
-    gap: 5px;
-    margin-top: 5px;
+    gap: 14px;
+    justify-content: center;
+    padding: 20px 0 8px 0;
+    transform: translateY(6px);
   }
 
   .section-title {
-    font-size: 15px;
-    margin-bottom: 2px;
+    font-size: 16px;
+    margin-bottom: 6px;
   }
 
   .stats {
-    gap: 4px;
+    gap: 5px;
   }
 
   .stat-item {
@@ -974,27 +1027,25 @@ canvas {
   }
 
   .stat-value {
-    font-size: 18px;
-    margin-bottom: 2px;
+    font-size: 16px;
   }
 
   .stat-label {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .stack-list {
-    gap: 4px;
-    margin-bottom: 0;
+    gap: 5px;
   }
 
   .stack-item {
-    padding: 5px;
+    padding: 6px;
     font-size: 10px;
   }
 
   .project-small {
-    padding: 6px;
-    gap: 4px;
+    padding: 8px;
+    gap: 5px;
   }
 
   .project-title-small {
@@ -1003,12 +1054,65 @@ canvas {
 
   .project-description-small {
     font-size: 9px;
-    line-height: 1.1;
+  }
+}
+
+@media (max-width: 360px) {
+  .flip-container {
+    height: 400px;
+    max-width: 300px;
   }
 
-  .project-btn-small {
-    padding: 4px 8px;
+  .card-front,
+  .card-back {
+    padding: 10px;
+  }
+
+  /* Smallest Order button */
+  .order-btn {
+    padding: 4px 6px;
     font-size: 9px;
-    gap: 3px;
+  }
+
+  .order-btn svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Back card - Content moved 4px lower */
+  .back-content {
+    gap: 12px;
+    padding: 25px 0 10px 0;
+    transform: translateY(4px);
+  }
+
+  .section-title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .stats {
+    gap: 4px;
+  }
+
+  .stat-item {
+    padding: 5px 3px;
+  }
+
+  .stat-value {
+    font-size: 15px;
+  }
+
+  .stack-item {
+    font-size: 9px;
+    padding: 5px;
+  }
+
+  .project-title-small {
+    font-size: 12px;
+  }
+
+  .project-description-small {
+    font-size: 8px;
   }
 }
